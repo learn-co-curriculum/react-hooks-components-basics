@@ -73,7 +73,17 @@ specification. In this case, that's just the `render()` method.
 
 ## Nesting components
 So far, we've only created basic HTML elements using `React.createElement()`. However, instead of passing in a string,
-we can also pass in a React component!
+we can also pass in a React component! For example, to create a `<div>` with two `Button` components, we would do the
+following:
+
+```js
+const nestedButtons = React.createElement('div', {}, [
+  React.createElement(Button),
+  React.createElement(Button),
+]);
+```
+
+Again, note that HTML elements are strings, while components are passed by reference!
 
 ## Resources
 - [React Top-Level API](https://facebook.github.io/react/docs/top-level-api.html)
