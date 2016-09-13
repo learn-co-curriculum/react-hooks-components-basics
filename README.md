@@ -2,7 +2,7 @@
 
 ## Overview
 
-We'll introduce components, explain why they're important, and create them using two different methods. 
+We'll introduce components, explain why they're important, and create them in two different ways. 
 
 ## Objectives
 1. Create components using `React.createClass()`
