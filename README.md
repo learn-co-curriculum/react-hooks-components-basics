@@ -1,8 +1,14 @@
 # React Components
 
+## Overview
+
+We'll introduce components, explain why they're important, and create them using two different methods. 
+
 ## Objectives
-1. Explain how to create components using `React.createClass()`
-2. Explain how to create components by extending the `React.Component` class
+1. Create components using `React.createClass()`
+2. Render a component with children using `React.createClass()`
+3. Create components by extending the `React.Component` class
+4. Pass in a component when using `React.createElement()`
 
 ## Components?
 Now that we know how to render basic elements in React, let's kick things up a notch. Let's start by learning about
@@ -18,6 +24,7 @@ render out some basic HTML. Once we know how to do that, the door's wide open to
 dynamic in later lessons. Onwards!
 
 ## Old school
+
 Let's start by creating a React component using `React.createClass()`. While this method of creating React components
 is outdated (in a sense), it's important to know what its syntax looks like. Most React tutorials and guides still use
 this syntax, so if you see it in the wild, now you know what it is!
@@ -56,6 +63,7 @@ const ShoppingList = React.createClass({
 ```
 
 ## New school
+
 With the introduction and widespread adoption of ES2015, it's time we got with the program and starting coding using
 these new features! Using the class system in ES2015, we can create React component classes. Let's recreate our button
 from above:
@@ -72,6 +80,7 @@ As you can see, we're extending the base `React.Component` class, and adding in 
 specification. In this case, that's just the `render()` method.
 
 ## Nesting components
+
 So far, we've only created basic HTML elements using `React.createElement()`. However, instead of passing in a string,
 we can also pass in a React component! For example, to create a `<div>` with two `Button` components, we would do the
 following:
