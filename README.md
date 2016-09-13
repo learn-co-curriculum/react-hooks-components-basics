@@ -8,9 +8,10 @@
 Now that we know how to render basic elements in React, let's kick things up a notch. Let's start by learning about
 React components!
 
-While elements are very basic... _elements_ of an application (for example, a `<div>`), a React application usually
-consists of several _components_. React components are smarter and bigger than their element counterparts. They allow
-you to add event handlers, store internal state, communicate with parent components, and so on.
+While HTML elements are the basic building blocks of an application (for example, a `<div>`), a React application
+usually consists of several React _components_ combined together. Unlike the simple HTML elements, React components are
+smarter and bigger. They allow you to add event handlers, store internal state, communicate with parent components, and
+so on.
 
 You're going to learn all of that stuff, but for now, we'll take things slow and focus on creating components that just
 render out some basic HTML. Once we know how to do that, the door's wide open to making our components a lot more
