@@ -19,7 +19,7 @@ You're going to learn all of that stuff, but for now, we'll take things slow and
 
 ## Old school
 
-Let's start by creating a React component using `React.createClass()`. While this method of creating React components is outdated (in a sense), it's important to know what its syntax looks like. Most React tutorials and guides still use this syntax, so if you see it in the wild, now you know what it is!
+Let's start by talking about `React.createClass()`. While this method of creating React components has been since deprecated(NOTE!! Please do not use this syntax.) It's important to know what its syntax looks like. A lot of old React tutorials and guides will use this syntax. That is typically a sign to use a newer tutorial as React has changed alot since then and more than just the `React.createClass()` will no longer work. 
 
 `React.createClass()` takes one argument: an object that is basically the specification of your component. The _only_ requirement for this specification is that your object has a `render()` method — everything else is optional. The reason for `render()` being required is, of course, that React needs to know _what_ it should show on our screen!
 
@@ -49,14 +49,38 @@ const ShoppingList = React.createClass({
 });
 ```
 
-## New school
+## ES6 Syntax
 
-With the introduction and widespread adoption of ES2015, it's time we got with the program and starting coding using these new features! Using the class system in ES2015, we can create React component classes. Let's recreate our button from above:
+With ES6, React adopted a newer syntax that is more succinct. The syntax looks like this:
+
+```js
+class YourComponent extends React.Component {
+  render() {
+    // Your React Elements
+  }
+ }
+ ```
+ 
+Lets look at how we would define a small Button component:
 
 ```js
 class Button extends React.Component {
   render() {
     return React.createElement('button', {}, 'Click me!');
+  }
+}
+```
+
+Or with the ShoppingList component example we used with the older syntax:
+
+```js
+class ShoppingList extends React.Component {
+  render() {
+    return React.createElement('ul', {}, [
+      React.createElement('li', {}, 'Bananas'),
+      React.createElement('li', {}, 'Vanilla ice cream'),
+      React.createElement('li', {}, 'Chocolate'),
+    ]);
   }
 }
 ```
