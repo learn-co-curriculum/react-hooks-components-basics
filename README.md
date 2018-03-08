@@ -135,19 +135,20 @@ Just as we did before, let's look at what the resulting HTML looks like:
 
 ---
 
-Alright now! If this is the first time you have seen React syntax, take a moment. Stretch your limbs, make a sandwich, let the glorious paradigm sink in. We can appreciate that great machinations must be swimming around in your head, à la: "Finally, the possibilities to assert my truths via React Component powered blogs are infinite!"
+Alright now! If this is the first time you have seen React syntax, take a moment. Stretch your limbs, make a sandwich, let the glorious paradigm sink in. This is a core facet of React programming, and most of what we do going forward is going to build upon this component parent/child paradigm.
 
 ## Summary
 
-React components:
-  - Are modular, reusable, and exhibit a 'templating' like use
+**React components:**
+  - Are modular, reusable, and enable a 'templating' like functionality
   - help us organize our user interfaces _functionality_ and _presentation_
   - enable us to think about each piece in isolation, improving our ability to assert structure on increasingly complex programs
+
 While HTML elements are the basic building blocks of an application (for example, a `<div>`), a React application usually consists of several React _components_ combined together. Unlike the simple HTML elements, React components are smarter and bigger. They allow you to add event handlers, store internal state, communicate with other components, and much more.
 
 ## Looking Forward
 
-In this README, we introduced the fundamentals of a React component. Going forward we will expand on what we can do with components, how they fit into the larger React landscape, and what built in functionality they come with.
+In this README, we introduced some fundamentals of a React component. Going forward we will expand on what we can do with components, how they fit into the larger React landscape, and what built in functionality they come with.
 
 ## A Quick Note About the Past...
 
