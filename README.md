@@ -100,7 +100,7 @@ There is quite a bit going on here. Most notably, we are passing the content inf
   </div>
 
   // Here is where the real magic comes in: we are rendering multiple components
-  // within a single parent component! Pay close attention to that funky
+  // within a single parent component. Pay close attention to that funky
   // content={'blah'} portion. We are defining a variable that is passed to
   // every Comment component. Thereafter, we can access that variable within
   // the component.
