@@ -102,7 +102,7 @@ There is quite a bit going on here. Most notably, we are passing the content inf
   // Here is where the real magic comes in: we are rendering multiple components
   // within a single parent component. Pay close attention to that funky
   // content={'blah'} portion. We are defining a variable that is passed to
-  // every Comment component. Thereafter, we can access that variable within
+  // every `Comment` component. Thereafter, we can access that variable within
   // the component.
   <Comment content={"I agree with this statement.<br/>- Angela Merkel"}/>
   <Comment content={"A universal truth.<br/>- Noam Chomsky"}/>
