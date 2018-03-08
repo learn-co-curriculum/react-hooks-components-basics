@@ -79,7 +79,7 @@ class BlogPost extends React.Component {
 }
 ```
 
-There is quite a bit going on here. Let's zero in on the important parts within each component's `render` method and digest it line by line:
+There is quite a bit going on here. Most notably, we are passing the content information to the children components. Let's zero in on the important parts within each component's `render` method and digest it line by line:
 
 ```javascript
 // Comment Component
