@@ -2,7 +2,7 @@
 
 ## Overview
 
-We'll introduce components, explain why they're important, and create them in two different ways.
+We'll introduce components, explain why they're important, and look at a few examples.
 
 ## Objectives
 1. Understand React components
