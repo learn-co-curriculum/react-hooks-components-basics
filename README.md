@@ -130,7 +130,7 @@ Just as we did before, let's look at what the resulting HTML looks like:
   <div>
     Truth is singular. Its ‘versions’ are mistruths<br/>- Sonmi-451
   <div/>
-<div>
+</div>
 ```
 
 ---
