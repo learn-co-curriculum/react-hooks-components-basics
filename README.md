@@ -47,7 +47,7 @@ When React creates this element and adds it to the DOM, the resulting HTML will 
 
 ### Step 2 -- re-use the component many times!
 
-Let's imagine we have a blog post online describing the fact (note: not opinion) of why Bjarne Stroustrup has the [perfect lecture oration][bjarne-stroustrup]. Naturally, we wan't our blog to display comments made by readers' that agree with our statement. Time to put the **modularity** aspect of components to use! Here is what the React implementation of this may look like if we were to make use of the `Comment` component in an enclosing `BlogPost` component:
+Let's imagine we have a blog post online describing the fact (note: not opinion) of why Bjarne Stroustrup has the [perfect lecture oration][bjarne-stroustrup]. Naturally, we wan't our blog to display comments made by readers that agree with our statement. Time to put the **modularity** aspect of components to use! Here is what the React implementation of this may look like if we were to make use of the `Comment` component in an enclosing `BlogPost` component:
 
 ```javascript
 class Comment extends React.Component {
