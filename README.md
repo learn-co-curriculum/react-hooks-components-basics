@@ -37,7 +37,7 @@ class Comment extends React.Component {
 }
 ```
 
-When React creates this element and adds it to the DOM, the resulting HTML will look just as you would expect!:
+When React creates this element and adds it to the DOM, the resulting HTML will look just as you would expect:
 
 ```HTML
 <div>i am a hard coded comment! help! make me dynamic!</div>
