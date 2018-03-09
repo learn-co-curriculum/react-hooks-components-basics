@@ -139,7 +139,7 @@ Just as we did before, let's look at what the resulting HTML looks like:
 
 ...but seeing is believing so let's look at this in technicolor! Following is an inspection of the HTML and _real live DOM elements_ that React rendered when we blasted this code into a project:
 
-![][component-example-gif]
+![component-example-gif](https://learn-verified.s3.amazonaws.com/sample-component-video.gif)
 ---
 
 Alright now! If this is the first time you have seen React syntax, take a moment. Stretch your limbs, make a sandwich, let the glorious paradigm sink in. This is a core facet of React programming, and most of what we do going forward is going to build upon this component parent/child paradigm.
@@ -166,7 +166,6 @@ In older versions a method, `React.createClass()`, was used in place of where we
 ## Resources
 - [React Top-Level API](https://reactjs.org/docs/react-api.html)
 
-[component-example-gif]: https://learn-verified.s3.amazonaws.com/sample-component-video.gif
 [old-react]: https://reactjs.org/docs/react-without-es6.html
 [react-component]: https://reactjs.org/docs/components-and-props.html
 [boiler-plate]: https://en.wikipedia.org/wiki/Boilerplate_code
