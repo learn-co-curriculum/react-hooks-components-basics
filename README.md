@@ -16,7 +16,7 @@ Let's examine a high level overview of what a React component is before we imple
 >Components let you split the UI into independent, reusable pieces, and think
 >about each piece in isolation.
 
-Components modularize both _functionality_ and _presentation_ in our code. In order to understand how powerful this is, consider just how complicated user interfaces of web applications can become. The difficulty in logically arranging, architecting, and programming these web applications increases with their size. Components help us keep all of this organized and predictable while abstracting the ['boiler plate'][boiler-plate] code.
+Components modularize both _functionality_ and _presentation_ in our code. In order to understand how powerful this is, consider just how complicated user interfaces of web applications can become. The difficulty in logically arranging, architecting, and programming these web applications increases with their size. Components are like little packages: they help us keep everything organized and predictable while abstracting the ['boiler plate'][boiler-plate] code.
 
 Enough of a description -- let's see some examples! While they are much more than this, the first thing we need to understand about components is the ways in which they act as templates. Let's start simply and build up from there:
 
@@ -53,8 +53,8 @@ Let's imagine we have a blog post online describing the fact (note: not opinion)
 class Comment extends React.Component {
   render() {
     return (
-      <div>
-        {this.props.contents}
+      <div className="comment">
+        {this.props.content}
       </div>  
     )
   }
@@ -63,15 +63,15 @@ class Comment extends React.Component {
 class BlogPost extends React.Component {
   render() {
     return (
-      <div>
+      <div id="blog-post">
 
         <div id="blog-content">
           Dear Reader: Bjarne Stroustrup has the perfect lecture oration.
         </div>
 
-        <Comment content={"I agree with this statement.<br/>- Angela Merkel"}/>
-        <Comment content={"A universal truth.<br/>- Noam Chomsky"}/>
-        <Comment content={"Truth is singular. Its ‘versions’ are mistruths<br/>- Sonmi-451"}/>
+        <Comment content={"I agree with this statement. - Angela Merkel"}/>
+        <Comment content={"A universal truth. - Noam Chomsky"}/>
+        <Comment content={"Truth is singular. Its ‘versions’ are mistruths. - Sonmi-451"}/>
 
       </div>
     )
@@ -84,16 +84,18 @@ There is quite a bit going on here. Most notably, we are passing the content inf
 ```javascript
 // Comment Component
 
-// this.props.wot?! Here, we are making use of the 'templating' nature of React
+// this.props.what!? Here, we are making use of the 'templating' nature of React
 // components. Information is passed to the component itself, which can then
 // dynamically render it.
-<div>{this.props.contents}</div>
+<div className="comment"> // `className=` is used in place of traditional `class=`
+  {this.props.contents}
+</div>
 ```
 
 ```javascript
 // BlogPost Component
 
-<div>
+<div id="block-post">
   // Following is the actual blog post content!
   <div id="blog-content">
     Dear Reader: Bjarne Stroustrup has the perfect lecture oration.
@@ -114,25 +116,30 @@ There is quite a bit going on here. Most notably, we are passing the content inf
 Just as we did before, let's look at what the resulting HTML looks like:
 
 ```HTML
-<div>
+<div id="blog-post">
+
   <div id="blog-content">
     Dear Reader: Bjarne Stroustrup has the perfect lecture oration.
   </div>
 
-  <div>
+  <div class="comment">
     I agree with this statement.<br/>- Angela Merkel
-  <div/>
+  </div>
 
-  <div>
+  <div class="comment">
     A universal truth.<br/>- Noam Chomsky
-  <div/>
+  </div>
 
-  <div>
+  <div class="comment">
     Truth is singular. Its ‘versions’ are mistruths<br/>- Sonmi-451
-  <div/>
+  </div>
+
 </div>
 ```
 
+...but seeing is believing so let's look at this in technicolor! Following is an inspection of the HTML and _real live DOM elements_ that React rendered when we blasted this code into a project:
+
+![component-example-gif][]
 ---
 
 Alright now! If this is the first time you have seen React syntax, take a moment. Stretch your limbs, make a sandwich, let the glorious paradigm sink in. This is a core facet of React programming, and most of what we do going forward is going to build upon this component parent/child paradigm.
@@ -159,6 +166,7 @@ In older versions a method, `React.createClass()`, was used in place of where we
 ## Resources
 - [React Top-Level API](https://reactjs.org/docs/react-api.html)
 
+[component-example-gif]: https://learn-verified.s3.amazonaws.com/sample-component-video.gif
 [old-react]: https://reactjs.org/docs/react-without-es6.html
 [react-component]: https://reactjs.org/docs/components-and-props.html
 [boiler-plate]: https://en.wikipedia.org/wiki/Boilerplate_code
