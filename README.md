@@ -140,7 +140,7 @@ Just as we did before, let's look at what the resulting HTML looks like:
 ...but seeing is believing so let's look at this in technicolor! Following is an inspection of the HTML and _real live DOM elements_ that React rendered when we blasted this code into a project:
 
 <object data="https://learn-verified.s3.amazonaws.com/sample-component-video.gif" type="image/png">
-  <img src="./assets/dank-example.gif" />
+  <img src="./dank-example.gif" />
 </object>
 
 
