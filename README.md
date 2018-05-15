@@ -149,7 +149,7 @@ Alright now! If this is the first time you have seen React syntax, take a moment
 ## Summary
 
 **React components:**
-  - Are modular, reusable, and enable a 'templating' like functionality
+  - are modular, reusable, and enable a 'templating' like functionality
   - help us organize our user interfaces _functionality_ and _presentation_
   - enable us to think about each piece in isolation, improving our ability to assert structure on increasingly complex programs
 
