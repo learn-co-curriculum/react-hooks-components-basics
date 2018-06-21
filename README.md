@@ -1,36 +1,65 @@
 # React Components
 
+
 ## Overview
 
-We'll introduce components, explain why they're important, and look at a few examples.
+We'll introduce the heart of React: components. This will include explaining why
+they're important, and examining a few examples. If the idea and application of
+components doesn't click immediately, _do not worry!_ The several moving parts
+required to understand how to use them will fall into place as we move forward. 
+
 
 ## Objectives
+
 1. Understand React components
-2. Create a React component by extending the `React.Component` class
-3. Re-use that component in a parent component
+2. Create React components and show the HTML they create
 
-## Components?
 
-Let's examine a high level overview of what a React component is before we implement one. The official [React documentation on components][react-component] says it best:
+## Introduction
+
+Let's examine a high level overview of what a React component is before we
+implement one. The official [React documentation on components][react-component]
+says it best:
 
 >Components let you split the UI into independent, reusable pieces, and think
 >about each piece in isolation.
 
-Components modularize both _functionality_ and _presentation_ in our code. In order to understand how powerful this is, consider just how complicated user interfaces of web applications can become. The difficulty in logically arranging, architecting, and programming these web applications increases with their size. Components are like little packages: they help us keep everything organized and predictable while abstracting the ['boiler plate'][boiler-plate] code.
+Components modularize both _functionality_ and _presentation_ in our code. In
+order to understand how powerful this is, consider just how intricate web
+applications can become. The difficulty in logically arranging, architecting,
+and programming these web applications increases with their size. Components are
+like little packages: they help us keep everything organized and predictable
+while abstracting the ['boiler plate'][boiler-plate] code. 
 
-Enough of a description -- let's see some examples! While they are much more than this, the first thing we need to understand about components is the ways in which they act as templates. Let's start simply and build up from there:
+Enough of a description -- let's see some examples! While the possibilities of
+what we can do with components are endless, the first thing we need to
+understand about them is the ways in which they act as code templates. Let's
+start simply and build up from there using the following as an example:
+
+
+## React Application Idea
+
+Let's imagine we want a blog post online describing the fact (note: not opinion) of why Bjarne Stroustrup has the [perfect lecture oration][bjarne-stroustrup]. 
+
+Naturally, we want our blog to display comments made by readers that agree with our statement. In summary, we want an application that displays an opinion and responses to that opinion (like a 'comments' section). 
+
+We will flesh out this example by following two steps:
+
+1. write the components
+2. use the components
 
 ---
-### Step 1 -- make a component
 
-In the following, we are defining a `Comment` component to display a single user comment:
+#### Step 1 -- write the components
+
+First, let's make a component to showcase an opinion:
 
 ```javascript
-class Comment extends React.Component {
+class Blog extends React.Component {
   render() {
     return (
       <div>
-        i am a hard coded comment! help! make me dynamic!
+        Dear Reader: Bjarne Stroustrup has the perfect lecture oration.
       </div>
     )
   }
@@ -40,135 +69,85 @@ class Comment extends React.Component {
 When React creates this element and adds it to the DOM, the resulting HTML will look just as you would expect:
 
 ```HTML
-<div>i am a hard coded comment! help! make me dynamic!</div>
+<div>Dear Reader: Bjarne Stroustrup has the perfect lecture oration.</div>
 ```
 
----
-
-### Step 2 -- re-use the component many times!
-
-Let's imagine we have a blog post online describing the fact (note: not opinion) of why Bjarne Stroustrup has the [perfect lecture oration][bjarne-stroustrup]. Naturally, we want our blog to display comments made by readers that agree with our statement. Time to put the **modularity** aspect of components to use! Here is what the React implementation of this may look like if we were to make use of the `Comment` component in an enclosing `BlogPost` component:
+Ok, that takes care of our opinion part. Now let's make a component to display a single user's comment:
 
 ```javascript
 class Comment extends React.Component {
   render() {
     return (
-      <div className="comment">
-        {this.props.content}
-      </div>  
-    )
-  }
-}
-
-class BlogPost extends React.Component {
-  render() {
-    return (
-      <div id="blog-post">
-
-        <div id="blog-content">
-          Dear Reader: Bjarne Stroustrup has the perfect lecture oration.
-        </div>
-
-        <Comment content={"I agree with this statement. - Angela Merkel"}/>
-        <Comment content={"A universal truth. - Noam Chomsky"}/>
-        <Comment content={"Truth is singular. Its ‘versions’ are mistruths. - Sonmi-451"}/>
-
+      <div>
+        Naturally, I agree with this article.
       </div>
     )
   }
 }
 ```
 
-There is quite a bit going on here. Most notably, we are passing the content information to the children components. Let's zero in on the important parts within each component's `render` method and digest it line by line:
-
-```javascript
-// Comment Component
-
-// this.props.what!? Here, we are making use of the 'templating' nature of React
-// components. Information is passed to the component itself, which can then
-// dynamically render it.
-<div className="comment"> // `className=` is used in place of traditional `class=`
-  {this.props.contents}
-</div>
-```
-
-```javascript
-// BlogPost Component
-
-<div id="block-post">
-  // Following is the actual blog post content!
-  <div id="blog-content">
-    Dear Reader: Bjarne Stroustrup has the perfect lecture oration.
-  </div>
-
-  // Here is where the real magic comes in: we are rendering multiple components
-  // within a single parent component. Pay close attention to that funky
-  // content={'blah'} portion. We are defining a variable that is passed to
-  // every `Comment` component. Thereafter, we can access that `content` variable within
-  // the `Comment` component via the `this.props.content` you see above.
-  <Comment content={"I agree with this statement.<br/>- Angela Merkel"}/>
-  <Comment content={"A universal truth.<br/>- Noam Chomsky"}/>
-  <Comment content={"Truth is singular. Its ‘versions’ are mistruths<br/>- Sonmi-451"}/>
-
-</div>
-```
-
-Just as we did before, let's look at what the resulting HTML looks like:
+...and the HTML when React actually adds this component to the DOM:
 
 ```HTML
-<div id="blog-post">
+<div>Naturally, I agree with this article.</div>
+```
 
-  <div id="blog-content">
-    Dear Reader: Bjarne Stroustrup has the perfect lecture oration.
-  </div>
+In both of our examples, React is taking JavaScript code, interpreting that special HTML/JavaScript mixup within the `render()`'s `return()` statement, and spitting out plain old HTML that browsers will know how to represent to the user.
 
-  <div class="comment">
-    I agree with this statement.<br/>- Angela Merkel
-  </div>
+Now that we have our components in hand, it's time to actually use them.
 
-  <div class="comment">
-    A universal truth.<br/>- Noam Chomsky
-  </div>
 
-  <div class="comment">
-    Truth is singular. Its ‘versions’ are mistruths<br/>- Sonmi-451
-  </div>
+---
 
+#### Step 2 -- use the components
+
+Now that we have these components written, all we need to do is make sure some other component is making use of them in it's `render` method. Every React application has some top level component(s). Very often, this top level component is simply called `App`. Let's assume just that for our example:
+
+```javascript
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Blog />
+        <Comment />
+      </div>
+    )
+  }
+}
+```
+
+Hold on there, Whoa Nelly, hold up, **ples stahp**. What is going on in that `return` block?! That is an abomination! It is neither real HTML nor real JavaScript! Instead, it is some vulgar mashup of the two, an unholy merger! 
+
+If this is your first time seeing JSX, which is React's syntax brainchild, your mind is likely trying to read both HTML and JavaScript at the same time and short circuiting just like this cat:
+
+![](https://media2.giphy.com/media/vDurI6FYH7qi4/giphy.gif)
+
+We will dive deeper into JSX (which is actually quite wonderful) later. For now just take it for granted and trust it's wonkiness. 
+
+What we are seeing in this `App` component's `render` method is a straightforward description of what we want: "Hey `App` component! When you render, I want you to also be responsible for making both the `Blog` and the `Comment` component!". Of course, because computers still listen to us (for now) it will do just that! What do you think the resulting HTML will look like?
+
+```HTML
+<div>
+  <div>Dear Reader: Bjarne Stroustrup has the perfect lecture oration.</div>
+  <div>Naturally, I agree with this article.</div>
 </div>
 ```
 
-...but seeing is believing so let's look at this in technicolor! Following is an inspection of the HTML and _real live DOM elements_ that React rendered when we blasted this code into a project:
+This unpacks logically. The `App` component (being our top level component) wraps around both `Blog` and `Comment`, and we already know what they look like when they are turned into HTML. 
 
-<object data="https://learn-verified.s3.amazonaws.com/sample-component-video.gif" type="image/png">
-  <img src="./dank-example.gif" />
-</object>
+As you may expect, in our example above, we would refer to the `App` component as both the `Comment` and `Blog` component's _parent_ component. Inversely, we refer to `Comment` and `Blog` as _children_ components of `App`.
 
-
-Alright now! If this is the first time you have seen React syntax, take a moment. Stretch your limbs, make a sandwich, let the glorious paradigm sink in. This is a core facet of React programming, and most of what we do going forward is going to build upon this component parent/child paradigm.
 
 ## Summary
 
-**React components:**
-  - are modular, reusable, and enable a 'templating' like functionality
-  - help us organize our user interfaces _functionality_ and _presentation_
-  - enable us to think about each piece in isolation, improving our ability to assert structure on increasingly complex programs
+We just introduced simplified, bare bones, React components. They are used to house modularized front end code. In our example, and which is often the case, they contain information on how a portion of our application should be turned into HTML. 
 
-While HTML elements are the basic building blocks of an application (for example, a `<div>`), a React application usually consists of several React _components_ combined together. Unlike the simple HTML elements, React components are smarter and bigger. They allow you to add event handlers, store internal state, communicate with other components, and much more.
+Going forward, we will continue with this example and show how components can be re-used and how they can be written as dynamic templates, where their content is interchangeable. 
 
-## Looking Forward
-
-In this README, we introduced some fundamentals of a React component. Going forward we will expand on what we can do with components, how they fit into the larger React landscape, and what built in functionality they come with.
-
-## A Quick Note About the Past...
-
-React is a living framework that is constantly being updated and improved upon. Compounding on that, React has spanned the transition from ES5 to ES6, (the newer version of which has had many updates, including `Class` syntax). This means old versions of React code will, in some places, look different.
-
-In older versions a method, `React.createClass()`, was used in place of where we were defining our own `Class`es and extending the `React.component` class (see code above!). While this `React.createClass()` method of creating React components has since been deprecated, it is still present in many older code bases and tutorials. For now, we recommend sticking with the up-to-date class syntax we present, but don't be alarmed if you come across unfamiliar ways to create React components. The [React documentation][old-react] is always there for you regarding backwards compatibility.
 
 ## Resources
 - [React Top-Level API](https://reactjs.org/docs/react-api.html)
 
-[old-react]: https://reactjs.org/docs/react-without-es6.html
 [react-component]: https://reactjs.org/docs/components-and-props.html
 [boiler-plate]: https://en.wikipedia.org/wiki/Boilerplate_code
 [bjarne-stroustrup]: https://www.youtube.com/watch?v=JBjjnqG0BP8
