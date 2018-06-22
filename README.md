@@ -147,7 +147,7 @@ What we are seeing in this `App` component's `render()` method is a
 straightforward description of what we want: "Hey `App` component! When you
 render, I want you to also be responsible for making both the `Article` and the
 `Comment` component!". Of course, because computers still listen to us (for now)
-it will do just that! What do you think the resulting HTML will look like?
+it will do just that! Here is what the resulting HTML will look like:
 
 ```HTML
 <div>
