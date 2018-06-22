@@ -73,7 +73,7 @@ class Article extends React.Component {
 Take a moment to read that code line by line:
   - a new class, `Article`, is declared
   - the class extends React's `component` class (which provides us with built in methods and attributes)
-  - a `render()` method is defined, and what is should return is explicitly provided (in `render()`, we tell React "Hey, when you want to put this component on the DOM, here is what it should become!")
+  - a `render()` method is defined, and what it should return is explicitly provided (in `render()`, we tell React "Hey, when you want to put this component on the DOM, here is what it should become!")
 
 When React creates this element and adds it to the DOM, the resulting HTML will
 look just as you would expect:
