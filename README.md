@@ -4,7 +4,7 @@
 ## Overview
 
 We'll introduce the heart of React: components. This will include explaining why
-they're important, and examining a few examples. If the idea and application of
+they're important and examining a few examples. If the idea and application of
 components doesn't click immediately, _do not worry!_ The several moving parts
 required to understand how to use them will fall into place as we move forward. 
 
@@ -39,9 +39,13 @@ start simply and build up from there using the following as an example:
 
 ## React Application Idea
 
-Let's imagine we want a blog post online describing the fact (note: not opinion) of why Bjarne Stroustrup has the [perfect lecture oration][bjarne-stroustrup]. 
+Let's imagine we want a blog article online describing the fact (note: not
+opinion) of why Bjarne Stroustrup has the [perfect lecture
+oration][bjarne-stroustrup]. 
 
-Naturally, we want our blog to display comments made by readers that agree with our statement. In summary, we want an application that displays an opinion and responses to that opinion (like a 'comments' section). 
+Naturally, we want our blog article to display comments made by readers that
+agree with our statement. In summary, we want an application that displays an
+opinion and responses to that opinion (like a 'comments' section). 
 
 We will flesh out this example by following two steps:
 
@@ -55,7 +59,7 @@ We will flesh out this example by following two steps:
 First, let's make a component to showcase an opinion:
 
 ```javascript
-class Blog extends React.Component {
+class Article extends React.Component {
   render() {
     return (
       <div>
@@ -66,13 +70,24 @@ class Blog extends React.Component {
 }
 ```
 
-When React creates this element and adds it to the DOM, the resulting HTML will look just as you would expect:
+Take a moment to read that code line by line:
+  - a new class, `Article`, is declared
+  - the class extends React's `component` class (which provides us with built in methods and attributes)
+  - a `render()` method is defined, and what is should return is explicitly provided (in `render()`, we tell React "Hey, when you want to put this component on the DOM, here is what it should become!")
+
+When React creates this element and adds it to the DOM, the resulting HTML will
+look just as you would expect:
 
 ```HTML
 <div>Dear Reader: Bjarne Stroustrup has the perfect lecture oration.</div>
 ```
 
-Ok, that takes care of our opinion part. Now let's make a component to display a single user's comment:
+Let's see what it would look like, were we to only render this one component, in the DOM:
+
+![](https://curriculum-content.s3.amazonaws.com/react/component-article-example.png)
+
+Ok, that takes care of our `Article` part of our application. Now let's make a
+component to display a single user's comment:
 
 ```javascript
 class Comment extends React.Component {
@@ -86,13 +101,19 @@ class Comment extends React.Component {
 }
 ```
 
+Again, and if only for practice, take the time to read that component line by
+line.
+
 ...and the HTML when React actually adds this component to the DOM:
 
 ```HTML
 <div>Naturally, I agree with this article.</div>
 ```
 
-In both of our examples, React is taking JavaScript code, interpreting that special HTML/JavaScript mixup within the `render()`'s `return()` statement, and spitting out plain old HTML that browsers will know how to represent to the user.
+In both of our examples, React is taking JavaScript code, interpreting that
+special HTML/JavaScript syntax within the `render()`'s `return()` statement, and
+spitting out plain old HTML that browsers will know how to represent to the
+user.
 
 Now that we have our components in hand, it's time to actually use them.
 
@@ -108,7 +129,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Blog />
+        <Article />
         <Comment />
       </div>
     )
@@ -122,9 +143,13 @@ If this is your first time seeing JSX, which is React's syntax brainchild, your 
 
 ![](https://media2.giphy.com/media/vDurI6FYH7qi4/giphy.gif)
 
-We will dive deeper into JSX (which is actually quite wonderful) later. For now just take it for granted and trust it's wonkiness. 
+We will dive deeper into JSX (which is actually quite wonderful) later.
 
-What we are seeing in this `App` component's `render` method is a straightforward description of what we want: "Hey `App` component! When you render, I want you to also be responsible for making both the `Blog` and the `Comment` component!". Of course, because computers still listen to us (for now) it will do just that! What do you think the resulting HTML will look like?
+What we are seeing in this `App` component's `render()` method is a
+straightforward description of what we want: "Hey `App` component! When you
+render, I want you to also be responsible for making both the `Article` and the
+`Comment` component!". Of course, because computers still listen to us (for now)
+it will do just that! What do you think the resulting HTML will look like?
 
 ```HTML
 <div>
@@ -133,16 +158,23 @@ What we are seeing in this `App` component's `render` method is a straightforwar
 </div>
 ```
 
-This unpacks logically. The `App` component (being our top level component) wraps around both `Blog` and `Comment`, and we already know what they look like when they are turned into HTML. 
+![](https://curriculum-content.s3.amazonaws.com/react/component-article-comment-example.png)
 
-As you may expect, in our example above, we would refer to the `App` component as both the `Comment` and `Blog` component's _parent_ component. Inversely, we refer to `Comment` and `Blog` as _children_ components of `App`.
+This unpacks logically. The `App` component (being our top level component) wraps around both `Article` and `Comment`, and we already know what they look like when they are turned into HTML. 
+
+As you may expect, we refer to the `App` component as both the `Comment` and `Article` component's _parent_ component. Inversely, we refer to `Comment` and `Article` as _children_ components of `App`.
 
 
 ## Summary
 
-We just introduced simplified, bare bones, React components. They are used to house modularized front end code. In our example, and which is often the case, they contain information on how a portion of our application should be turned into HTML. 
+We just introduced simplified, bare bones, React components. They are used to
+house modularized front end code. In our example, which is often the case, they
+contain information on how a portion of our application should be turned into
+HTML. 
 
-Going forward, we will continue with this example and show how components can be re-used and how they can be written as dynamic templates, where their content is interchangeable. 
+Going forward, we will continue with this example and show how components can be
+re-used and how they can be written as dynamic templates, where their content is
+interchangeable. 
 
 
 ## Resources

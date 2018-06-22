@@ -1,3 +1,20 @@
+# Dynamic React Components
+
+
+## Overview
+
+We'll take the next step with React components and examine how they can be used
+as dynamic templates. 
+
+
+## Objectives
+
+1. Understand how React components can be dynamic templates
+2. Create dynamic React components and show the HTML they create
+
+
+## Introduction
+
 
 #### Step 3 -- use the components as templates
 
