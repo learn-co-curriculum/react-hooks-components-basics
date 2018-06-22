@@ -113,7 +113,7 @@ special HTML/JavaScript syntax within the `render()`'s `return()` statement, and
 spitting out plain old HTML that browsers will know how to represent to the
 user.
 
-Now that we have our components in hand, it's time to actually use them.
+Once we have our components in hand, it's time to actually use them.
 
 
 ---
