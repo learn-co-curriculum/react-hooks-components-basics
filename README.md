@@ -101,10 +101,8 @@ class Comment extends React.Component {
 }
 ```
 
-Again, and if only for practice, take the time to read that component line by
-line.
-
-...and the HTML when React actually adds this component to the DOM:
+Take the time to read that component line by line. Here is the HTML that this 
+would create when added to the DOM:
 
 ```HTML
 <div>Naturally, I agree with this article.</div>
