@@ -135,7 +135,7 @@ class App extends React.Component {
 }
 ```
 
-Hold on there, Whoa Nelly, hold up, **ples stahp**. What is going on in that `return` block?! That is an abomination! It is neither real HTML nor real JavaScript! Instead, it is some vulgar mashup of the two, an unholy merger! 
+Hold on there...Whoa Nelly...**ples stahp**! What is going on in that `return` block?! That is an abomination! It is neither real HTML nor real JavaScript! Instead, it is some vulgar mashup of the two, an unholy merger! 
 
 If this is your first time seeing JSX, which is React's syntax brainchild, your mind is likely trying to read both HTML and JavaScript at the same time and short circuiting just like this cat:
 
