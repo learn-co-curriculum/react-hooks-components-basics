@@ -1,12 +1,11 @@
 # React Components
 
-
 ## Overview
 
 We'll introduce the heart of React: components. This will include explaining why
 they're important and examining a few examples. If the idea and application of
 components don't click immediately, _do not worry!_ The different moving parts
-required to understand how to use them will fall into place as we move forward. 
+required to understand how to use them will fall into place as we move forward.
 
 
 ## Objectives
@@ -29,7 +28,8 @@ order to understand how powerful this is, consider just how intricate web
 applications can become. The difficulty in logically arranging, architecting,
 and programming these web applications increases with their size. Components are
 like little packages: they help us keep everything organized and predictable
-while abstracting the ['boiler plate'][boiler-plate] code. 
+while abstracting the ['boiler plate'][boiler-plate] code.  Each component
+contains a snippet of code that to be rendered to the DOM.
 
 Enough of a description -- let's see some examples! While the possibilities of
 what we can do with components are endless, the first thing we need to
@@ -39,13 +39,13 @@ start simply and build up from there using the following as an example:
 
 ## React Application Idea
 
-Let's imagine we want a blog article online describing the fact (note: not
+Let's imagine we want a blog article describing the fact (note: not
 opinion) of why Bjarne Stroustrup has the [perfect lecture
-oration][bjarne-stroustrup]. 
+oration][bjarne-stroustrup].
 
 Naturally, we want our blog article to display comments made by readers that
 agree with our statement. In summary, we want an application that displays an
-opinion and responses to that opinion (like a 'comments' section). 
+opinion and responses to that opinion (like a 'comments' section).
 
 We will flesh out this example by following two steps:
 
@@ -101,7 +101,7 @@ class Comment extends React.Component {
 }
 ```
 
-Take the time to read that component line by line. Here is the HTML that this 
+Take the time to read that component line by line. Here is the HTML that this
 would create when added to the DOM:
 
 ```HTML
@@ -120,7 +120,10 @@ Once we have our components in hand, it's time to actually use them.
 
 #### Step 2 -- use the components
 
-Now that we have these components written, all we need to do is make sure some other component is making use of them in it's `render` method. Every React application has some top level component(s). Very often, this top level component is simply called `App`. Let's assume just that for our example:
+Now that we have these components written, all we need to do is make sure some
+other component is making use of them in it's `render` method. Every React
+application has some top level component(s). Very often, this top level
+component is simply called `App`. Let's assume just that for our example:
 
 ```javascript
 class App extends React.Component {
@@ -135,9 +138,13 @@ class App extends React.Component {
 }
 ```
 
-Hold on there...Whoa Nelly...**ples stahp**! What is going on in that `return` block?! That is an abomination! It is neither real HTML nor real JavaScript! Instead, it is some vulgar mashup of the two, an unholy merger! 
+Hold on there...Whoa Nelly...**ples stahp**! What is going on in that `return`
+block?! That is an abomination! It is neither real HTML nor real JavaScript!
+Instead, it is some vulgar mashup of the two, an unholy merger!
 
-If this is your first time seeing JSX, which is React's syntax brainchild, your mind is likely trying to read both HTML and JavaScript at the same time and short circuiting just like this cat:
+If this is your first time seeing JSX, which is React's syntax brainchild, your
+mind is likely trying to read both HTML and JavaScript at the same time and
+short circuiting just like this cat:
 
 ![](https://media2.giphy.com/media/vDurI6FYH7qi4/giphy.gif)
 
@@ -158,9 +165,13 @@ it will do just that! Here is what the resulting HTML will look like:
 
 ![](https://curriculum-content.s3.amazonaws.com/react/component-article-comment-example.png)
 
-This unpacks logically. The `App` component (being our top level component) wraps around both `Article` and `Comment`, and we already know what they look like when they are turned into HTML. 
+This unpacks logically. The `App` component (being our top level component)
+wraps around both `Article` and `Comment`, and we already know what they look
+like when they are turned into HTML.
 
-As you may expect, we refer to the `App` component as both the `Comment` and `Article` component's _parent_ component. Inversely, we refer to `Comment` and `Article` as _children_ components of `App`.
+As you may expect, we refer to the `App` component as both the `Comment` and
+`Article` component's _parent_ component. Inversely, we refer to `Comment` and
+`Article` as _children_ components of `App`.
 
 
 ## Summary
@@ -168,11 +179,11 @@ As you may expect, we refer to the `App` component as both the `Comment` and `Ar
 We just introduced simplified, bare bones, React components. They are used to
 house modularized front end code. In our example, which is often the case, they
 contain information on how a portion of our application should be turned into
-HTML. 
+HTML.
 
 Going forward, we will continue with this example and show how components can be
 re-used and how they can be written as dynamic templates, where their content is
-interchangeable. 
+interchangeable.
 
 
 ## Resources
