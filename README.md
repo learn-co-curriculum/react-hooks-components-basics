@@ -28,8 +28,8 @@ order to understand how powerful this is, consider just how intricate web
 applications can become. The difficulty in logically arranging, architecting,
 and programming these web applications increases with their size. Components are
 like little packages: they help us keep everything organized and predictable
-while abstracting the ['boiler plate'][boiler-plate] code.  Each component
-contains a snippet of code that to be rendered to the DOM.
+while abstracting the ['boiler plate'][boiler-plate] code. Each component
+contains a snippet of code that describes what it should render to the DOM.
 
 Enough of a description -- let's see some examples! While the possibilities of
 what we can do with components are endless, the first thing we need to
