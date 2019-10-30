@@ -69,6 +69,7 @@ class Article extends React.Component {
   }
 }
 ```
+**Note:** You're probably use to just seeing `class Article extends Component`. Just know that `class Article extends React.Component` is an alternate syntax. Either way, it's doing the same exact thing. 
 
 Take a moment to read that code line by line:
   - a new class, `Article`, is declared
