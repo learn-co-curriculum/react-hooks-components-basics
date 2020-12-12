@@ -1,4 +1,4 @@
-# React Components
+# React Components Basics
 
 ## Overview
 
@@ -7,12 +7,10 @@ they're important and examining a few examples. If the idea and application of
 components don't click immediately, _do not worry!_ The different moving parts
 required to understand how to use them will fall into place as we move forward.
 
-
 ## Objectives
 
 1. Understand React components
 2. Create React components and show the HTML they create
-
 
 ## Introduction
 
@@ -20,8 +18,8 @@ Let's examine a high level overview of what a React component is before we
 implement one. The official [React documentation on components][react-component]
 says it best:
 
->Components let you split the UI into independent, reusable pieces, and think
->about each piece in isolation.
+> Components let you split the UI into independent, reusable pieces, and think
+> about each piece in isolation.
 
 Components modularize both _functionality_ and _presentation_ in our code. In
 order to understand how powerful this is, consider just how intricate web
@@ -31,51 +29,39 @@ like little packages: they help us keep everything organized and predictable
 while abstracting the ['boiler plate'][boiler-plate] code. Each component
 contains a snippet of code that describes what it should render to the DOM.
 
-Enough of a description -- let's see some examples! While the possibilities of
-what we can do with components are endless, the first thing we need to
+## React Application Idea
+
+Enough of a description &mdash; let's see some examples! While the possibilities
+of what we can do with components are endless, the first thing we need to
 understand about them is the ways in which they act as code templates. Let's
 start simply and build up from there using the following as an example:
 
+Let's imagine we want a blog article describing the fact (note: not opinion) of
+why Bjarne Stroustrup has the [perfect lecture oration][bjarne-stroustrup]. We
+also want our blog article to display comments made by readers.
 
-## React Application Idea
-
-Let's imagine we want a blog article describing the fact (note: not
-opinion) of why Bjarne Stroustrup has the [perfect lecture
-oration][bjarne-stroustrup].
-
-Naturally, we want our blog article to display comments made by readers that
-agree with our statement. In summary, we want an application that displays an
-opinion and responses to that opinion (like a 'comments' section).
-
-We will flesh out this example by following two steps:
-
-1. write the components
-2. use the components
-
----
-
-#### Step 1 -- write the components
+#### Step 1: write the components
 
 First, let's make a component to showcase an opinion:
 
 ```javascript
 function Article() {
   return (
-    <div>
-      Dear Reader: Bjarne Stroustrup has the perfect lecture oration.
-    </div>
-  )
+    <div>Dear Reader: Bjarne Stroustrup has the perfect lecture oration.</div>
+  );
 }
 ```
 
 Take a moment to read that code line by line:
-  - a function, `Article`, is declared
-  - what it should return is explicitly provided (we tell React "Hey, when you want to put this component on the DOM, here is what it should become!")
+
+- a function, `Article`, is declared
+- what it should return is explicitly provided (we tell React "Hey, when you
+  want to put this component on the DOM, here is what it should become!")
 
 When React creates this element and adds it to the DOM, the resulting HTML will
 look just as you would expect:
 
-```HTML
+```html
 <div>Dear Reader: Bjarne Stroustrup has the perfect lecture oration.</div>
 ```
 
@@ -88,18 +74,14 @@ component to display a single user's comment:
 
 ```javascript
 function Comment() {
-  return (
-    <div>
-      Naturally, I agree with this article.
-    </div>
-  )
+  return <div>Naturally, I agree with this article.</div>;
 }
 ```
 
 Take the time to read that component line by line. Here is the HTML that this
 would create when added to the DOM:
 
-```HTML
+```html
 <div>Naturally, I agree with this article.</div>
 ```
 
@@ -110,15 +92,13 @@ user.
 
 Once we have our components in hand, it's time to actually use them.
 
-
----
-
-#### Step 2 -- use the components
+#### Step 2: use the components
 
 Now that we have these components written, all we need to do is make sure some
 other component is making use of them in its return statement. Every React
 application has some top level component(s). Very often, this top level
-component is simply called `App`. Let's assume just that for our example:
+component is simply called `App`. For our example, here's what it might look
+like:
 
 ```javascript
 function App() {
@@ -127,29 +107,18 @@ function App() {
       <Article />
       <Comment />
     </div>
-  )
+  );
 }
 ```
 
-Hold on there...Whoa Nelly...**ples stahp**! What is going on in that `return`
-block?! That is an abomination! It is neither real HTML nor real JavaScript!
-Instead, it is some vulgar mashup of the two, an unholy merger!
+Here we can see JSX coming into play a bit more. The code inside the `return()`
+still looks a lot like regular HTML, but in addition to rendering a regular old
+HTML div element we're also rendering our two components. We've created code
+that is not only well structured and modular, but also a straightforward
+description of what we want the `App` component to do: render the article first,
+followed by the comment. Here is what the resulting HTML will look like:
 
-If this is your first time seeing JSX, which is React's syntax brainchild, your
-mind is likely trying to read both HTML and JavaScript at the same time and
-short circuiting just like this cat:
-
-![](https://media2.giphy.com/media/vDurI6FYH7qi4/giphy.gif)
-
-We will dive deeper into JSX (which is actually quite wonderful) later.
-
-What we are seeing in this `App` component's return statement is a
-straightforward description of what we want: "Hey `App` component! When you
-render, I want you to also be responsible for making both the `Article` and the
-`Comment` component!". Of course, because computers still listen to us (for now)
-it will do just that! Here is what the resulting HTML will look like:
-
-```HTML
+```html
 <div>
   <div>Dear Reader: Bjarne Stroustrup has the perfect lecture oration.</div>
   <div>Naturally, I agree with this article.</div>
@@ -166,6 +135,50 @@ As you may expect, we refer to the `App` component as both the `Comment` and
 `Article` component's _parent_ component. Inversely, we refer to `Comment` and
 `Article` as _children_ components of `App`.
 
+## A Note on Classes
+
+As you're exploring the React documentation, and finding other resources on
+React on the internet, you'll probably notice there are multiple syntaxes you
+can use for creating components: **function** components and **class**
+components.
+
+A **function** component looks like this:
+
+```js
+function Comment() {
+  return <div>Naturally, I agree with this article.</div>;
+}
+```
+
+Or this, using the arrow function syntax:
+
+```js
+const Comment = () => <div>Naturally, I agree with this article.</div>;
+```
+
+A **class** component looks like this:
+
+```js
+class Comment extends React.Component {
+  render() {
+    return <div>Naturally, I agree with this article.</div>;
+  }
+}
+```
+
+For many years, the only way to work with certain key features of React &mdash;
+_state_ and _lifecycle_ &mdash; was to use **class** components. Since the
+introduction of [**hooks**][hooks] in React 16.8, this is no longer true, and function
+components can be used for (almost) everything that class components can.
+
+React's recommendation is that _new_ components are written as function
+components; but class components will continue to be supported as well. React is
+also planning to [rewrite their documentation][react docs rewrite] to focus on
+function components and hooks in the near future.
+
+You'll learn more about class components later on, so that when you encounter
+them in legacy code, you'll still be able to work with them. However, for the
+time being, we'll just be focusing on function components.
 
 ## Summary
 
@@ -178,10 +191,13 @@ Going forward, we will continue with this example and show how components can be
 re-used and how they can be written as dynamic templates, where their content is
 interchangeable.
 
-
 ## Resources
+
 - [React Top-Level API](https://reactjs.org/docs/react-api.html)
+- [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
 
 [react-component]: https://reactjs.org/docs/components-and-props.html
 [boiler-plate]: https://en.wikipedia.org/wiki/Boilerplate_code
 [bjarne-stroustrup]: https://www.youtube.com/watch?v=JBjjnqG0BP8
+[react docs rewrite]: https://github.com/reactjs/reactjs.org/issues/3308
+[hooks]: https://reactjs.org/docs/hooks-intro.html
