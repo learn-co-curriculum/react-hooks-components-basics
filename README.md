@@ -176,6 +176,9 @@ components; but class components will continue to be supported as well. React is
 also planning to [rewrite their documentation][react docs rewrite] to focus on
 function components and hooks in the near future.
 
+In the meantime, you can also view a community-made version of the React docs
+that shows all examples with _function_ components [here][react docs hooks].
+
 You'll learn more about class components later on, so that when you encounter
 them in legacy code, you'll still be able to work with them. However, for the
 time being, we'll just be focusing on function components.
@@ -195,9 +198,11 @@ interchangeable.
 
 - [React Top-Level API](https://reactjs.org/docs/react-api.html)
 - [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
+- [React Docs with Hooks][react docs hooks]
 
 [react-component]: https://reactjs.org/docs/components-and-props.html
 [boiler-plate]: https://en.wikipedia.org/wiki/Boilerplate_code
 [bjarne-stroustrup]: https://www.youtube.com/watch?v=JBjjnqG0BP8
 [react docs rewrite]: https://github.com/reactjs/reactjs.org/issues/3308
+[react docs hooks]: https://reactwithhooks.netlify.app/
 [hooks]: https://reactjs.org/docs/hooks-intro.html
