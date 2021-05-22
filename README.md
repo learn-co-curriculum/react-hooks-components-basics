@@ -2,8 +2,8 @@
 
 ## Learning Goals
 
-1. Understand React components
-2. Create React components and show the HTML they create
+- Understand what a React component is and what it can be used for
+- Write React components and show the DOM elements they create
 
 ## Overview
 
@@ -55,8 +55,8 @@ function Article() {
 Take a moment to read that code line by line:
 
 - we declare a function, `Article`
-- we explicitly provide a return value (we tell React "Hey, when you want to put
-  this component on the DOM, here is what it should become!")
+- we explicitly provide a return value of **JSX** (we tell React "Hey, when you
+  want to put this component on the DOM, here is what it should become!")
 
 When React creates this element and adds it to the DOM, the resulting HTML will
 look just as you would expect:
@@ -65,7 +65,8 @@ look just as you would expect:
 <div>Dear Reader: Bjarne Stroustrup has the perfect lecture oration.</div>
 ```
 
-Let's see what it would look like, were we to only render this one component, in the DOM:
+Let's see what it would look like, were we to only render this one component, in
+the DOM:
 
 ![component article example](https://curriculum-content.s3.amazonaws.com/react/component-article-example.png)
 
@@ -86,9 +87,8 @@ would create when added to the DOM:
 ```
 
 In both of our examples, React is taking JavaScript code, interpreting that
-special HTML/JavaScript syntax within the `return()` statement, and
-spitting out plain old HTML that browsers will know how to represent to the
-user.
+special JSX syntax within the `return()` statement, and spitting out plain old
+HTML that browsers will know how to represent to the user.
 
 Once we have our components in hand, it's time to actually use them.
 
@@ -113,7 +113,7 @@ function App() {
 
 Here we can see JSX coming into play a bit more. The code inside the `return()`
 still looks a lot like regular HTML, but in addition to rendering a regular old
-HTML div element we're also rendering our two components. We've created code
+HTML `<div>` element, we're also rendering our two components. We've created code
 that is not only well structured and modular, but also a straightforward
 description of what we want the `App` component to do: render the article first,
 followed by the comment. Here is what the resulting HTML will look like:
@@ -184,12 +184,15 @@ You'll learn more about class components later on, so that when you encounter
 them in legacy code, you'll still be able to work with them. However, for the
 time being, we'll just be focusing on function components.
 
-## Summary
+## Conclusion
 
 We just introduced simplified, bare bones, React components. They are used to
 house modularized front end code. In our example, which is often the case, they
 contain information on how a portion of our application should be turned into
 HTML.
+
+The minimum requirement for a React component is that it must be a function that
+starts with a capital letter and returns JSX.
 
 Going forward, we will continue with this example and show how components can be
 re-used and how they can be written as dynamic templates, where their content is
