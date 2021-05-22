@@ -1,16 +1,16 @@
 # React Components Basics
 
+## Learning Goals
+
+1. Understand React components
+2. Create React components and show the HTML they create
+
 ## Overview
 
 We'll introduce the heart of React: components. This will include explaining why
 they're important and examining a few examples. If the idea and application of
 components don't click immediately, _do not worry!_ The different moving parts
 required to understand how to use them will fall into place as we move forward.
-
-## Objectives
-
-1. Understand React components
-2. Create React components and show the HTML they create
 
 ## Introduction
 
@@ -26,7 +26,7 @@ order to understand how powerful this is, consider just how intricate web
 applications can become. The difficulty in logically arranging, architecting,
 and programming these web applications increases with their size. Components are
 like little packages: they help us keep everything organized and predictable
-while abstracting the ['boiler plate'][boiler-plate] code. Each component
+while abstracting the ['boilerplate'][boilerplate] code. Each component
 contains a snippet of code that describes what it should render to the DOM.
 
 ## React Application Idea
@@ -40,7 +40,7 @@ Let's imagine we want a blog article describing the fact (note: not opinion) of
 why Bjarne Stroustrup has the [perfect lecture oration][bjarne-stroustrup]. We
 also want our blog article to display comments made by readers.
 
-#### Step 1: write the components
+### Step 1: Write the Components
 
 First, let's make a component to showcase an opinion:
 
@@ -54,9 +54,9 @@ function Article() {
 
 Take a moment to read that code line by line:
 
-- a function, `Article`, is declared
-- what it should return is explicitly provided (we tell React "Hey, when you
-  want to put this component on the DOM, here is what it should become!")
+- we declare a function, `Article`
+- we explicitly provide a return value (we tell React "Hey, when you want to put
+  this component on the DOM, here is what it should become!")
 
 When React creates this element and adds it to the DOM, the resulting HTML will
 look just as you would expect:
@@ -67,7 +67,7 @@ look just as you would expect:
 
 Let's see what it would look like, were we to only render this one component, in the DOM:
 
-![](https://curriculum-content.s3.amazonaws.com/react/component-article-example.png)
+![component article example](https://curriculum-content.s3.amazonaws.com/react/component-article-example.png)
 
 Ok, that takes care of our `Article` part of our application. Now let's make a
 component to display a single user's comment:
@@ -92,10 +92,10 @@ user.
 
 Once we have our components in hand, it's time to actually use them.
 
-#### Step 2: use the components
+### Step 2: Use the Components
 
 Now that we have these components written, all we need to do is make sure some
-other component is making use of them in its return statement. Every React
+other component is making use of them in its **return statement**. Every React
 application has some top level component(s). Very often, this top level
 component is simply called `App`. For our example, here's what it might look
 like:
@@ -125,7 +125,7 @@ followed by the comment. Here is what the resulting HTML will look like:
 </div>
 ```
 
-![](https://curriculum-content.s3.amazonaws.com/react/component-article-comment-example.png)
+![component article comment example](https://curriculum-content.s3.amazonaws.com/react/component-article-comment-example.png)
 
 This unpacks logically. The `App` component (being our top level component)
 wraps around both `Article` and `Comment`, and we already know what they look
@@ -168,8 +168,9 @@ class Comment extends React.Component {
 
 For many years, the only way to work with certain key features of React &mdash;
 _state_ and _lifecycle_ &mdash; was to use **class** components. Since the
-introduction of [**hooks**][hooks] in React 16.8, this is no longer true, and function
-components can be used for (almost) everything that class components can.
+introduction of [**hooks**][hooks] in React 16.8, this is no longer true, and
+function components can be used for (almost) everything that class components
+can.
 
 React's recommendation is that _new_ components are written as function
 components; but class components will continue to be supported as well. React is
@@ -201,7 +202,7 @@ interchangeable.
 - [React Docs with Hooks][react docs hooks]
 
 [react-component]: https://reactjs.org/docs/components-and-props.html
-[boiler-plate]: https://en.wikipedia.org/wiki/Boilerplate_code
+[boilerplate]: https://en.wikipedia.org/wiki/Boilerplate_code
 [bjarne-stroustrup]: https://www.youtube.com/watch?v=JBjjnqG0BP8
 [react docs rewrite]: https://github.com/reactjs/reactjs.org/issues/3308
 [react docs hooks]: https://reactwithhooks.netlify.app/
