@@ -15,7 +15,7 @@ required to understand how to use them will fall into place as we move forward.
 ## Introduction
 
 Let's examine a high level overview of what a React component is before we
-implement one. The official [React documentation on components][react-component]
+implement one. The official [React documentation on components][react component]
 says it best:
 
 > Components let you split the UI into independent, reusable pieces, and think
@@ -204,7 +204,7 @@ interchangeable.
 - [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
 - [React Docs with Hooks][react docs hooks]
 
-[react-component]: https://reactjs.org/docs/components-and-props.html
+[react component]: https://reactjs.org/docs/components-and-props.html
 [boilerplate]: https://en.wikipedia.org/wiki/Boilerplate_code
 [bjarne-stroustrup]: https://www.youtube.com/watch?v=JBjjnqG0BP8
 [react docs rewrite]: https://github.com/reactjs/reactjs.org/issues/3308
