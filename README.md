@@ -31,7 +31,7 @@ contains a snippet of code that describes what it should render to the DOM.
 
 ## React Application Idea
 
-Enough of a description &mdash; let's see some examples! While the possibilities
+Enough of a description — let's see some examples! While the possibilities
 of what we can do with components are endless, the first thing we need to
 understand about them is the ways in which they act as code templates. Let's
 start simply and build up from there using the following as an example:
@@ -166,8 +166,8 @@ class Comment extends React.Component {
 }
 ```
 
-For many years, the only way to work with certain key features of React &mdash;
-_state_ and _lifecycle_ &mdash; was to use **class** components. Since the
+For many years, the only way to work with certain key features of React —
+_state_ and _lifecycle_ — was to use **class** components. Since the
 introduction of [**hooks**][hooks] in React 16.8, this is no longer true, and
 function components can be used for (almost) everything that class components
 can.
