@@ -44,7 +44,7 @@ also want our blog article to display comments made by readers.
 
 First, let's make a component to showcase an opinion:
 
-```javascript
+```jsx
 function Article() {
   return (
     <div>Dear Reader: Bjarne Stroustrup has the perfect lecture oration.</div>
@@ -73,7 +73,7 @@ the DOM:
 Ok, that takes care of our `Article` part of our application. Now let's make a
 component to display a single user's comment:
 
-```javascript
+```jsx
 function Comment() {
   return <div>Naturally, I agree with this article.</div>;
 }
@@ -100,7 +100,7 @@ application has some top level component(s). Very often, this top level
 component is simply called `App`. For our example, here's what it might look
 like:
 
-```javascript
+```jsx
 function App() {
   return (
     <div>
@@ -144,7 +144,7 @@ components.
 
 A **function** component looks like this:
 
-```js
+```jsx
 function Comment() {
   return <div>Naturally, I agree with this article.</div>;
 }
@@ -152,13 +152,13 @@ function Comment() {
 
 Or this, using the arrow function syntax:
 
-```js
+```jsx
 const Comment = () => <div>Naturally, I agree with this article.</div>;
 ```
 
 A **class** component looks like this:
 
-```js
+```jsx
 class Comment extends React.Component {
   render() {
     return <div>Naturally, I agree with this article.</div>;
