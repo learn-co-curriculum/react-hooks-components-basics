@@ -40,6 +40,8 @@ Let's imagine we want a blog article describing the fact (note: not opinion) of
 why Bjarne Stroustrup has the [perfect lecture oration][bjarne-stroustrup]. We
 also want our blog article to display comments made by readers.
 
+Fork and clone the repo for this lesson if you'd like to follow along.
+
 ### Step 1: Write the Components
 
 First, let's make a component to showcase an opinion:
@@ -150,7 +152,7 @@ function Comment() {
 }
 ```
 
-Or this, using the arrow function syntax:
+Or using the arrow function syntax:
 
 ```jsx
 const Comment = () => <div>Naturally, I agree with this article.</div>;
@@ -172,10 +174,10 @@ introduction of [**hooks**][hooks] in React 16.8, this is no longer true, and
 function components can be used for (almost) everything that class components
 can.
 
-React's recommendation is that _new_ components are written as function
-components; but class components will continue to be supported as well. React is
-also planning to [rewrite their documentation][react docs rewrite] to focus on
-function components and hooks in the near future.
+React's recommendation is that components be written as function components
+moving forward; but class components will continue to be supported as well.
+React is also planning to [rewrite their documentation][react docs rewrite] to
+focus on function components and hooks in the near future.
 
 In the meantime, you can also view a community-made version of the React docs
 that shows all examples with _function_ components [here][react docs hooks].
@@ -187,7 +189,7 @@ time being, we'll just be focusing on function components.
 ## Conclusion
 
 We just introduced simplified, bare bones, React components. They are used to
-house modularized front end code. In our example, which is often the case, they
+house modularized front end code. In our example — as is often the case — they
 contain information on how a portion of our application should be turned into
 HTML.
 
@@ -195,8 +197,8 @@ The minimum requirement for a React component is that it must be a function that
 starts with a capital letter and returns JSX.
 
 Going forward, we will continue with this example and show how components can be
-re-used and how they can be written as dynamic templates, where their content is
-interchangeable.
+re-used and how they can be written as templates in which content is populated
+dynamically.
 
 ## Resources
 
