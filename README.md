@@ -5,14 +5,13 @@
 - Understand what a React component is and what it can be used for
 - Write React components and show the DOM elements they create
 
-## Overview
-
-We'll introduce the heart of React: components. This will include explaining why
-they're important and examining a few examples. If the idea and application of
-components don't click immediately, _do not worry!_ The different moving parts
-required to understand how to use them will fall into place as we move forward.
-
 ## Introduction
+
+In this lesson, we'll introduce the heart of React: components. This will
+include explaining why they're important and examining a few examples. If the
+idea and application of components doesn't click immediately, _do not worry!_ The
+different moving parts required to understand how to use them will fall into
+place as we move forward.
 
 Let's examine a high level overview of what a React component is before we
 implement one. The official [React documentation on components][react component]
