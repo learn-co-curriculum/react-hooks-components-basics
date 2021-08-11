@@ -175,11 +175,11 @@ can.
 
 React's recommendation is that components should be written as function
 components moving forward, but class components will continue to be supported
-as well. React is also planning to [rewrite their documentation][react docs
-rewrite] to focus on function components and hooks in the near future.
+as well. React is also planning to [rewrite their documentation][react docs rewrite]
+to focus on function components and hooks in the near future.
 
-In the meantime, you can also view a community-made version of the React docs
-that shows all examples with _function_ components [here][react docs hooks].
+In the meantime, you can also view a [community-made version][react docs hooks]
+of the React docs that shows all examples with _function_ components.
 
 You'll learn more about class components later on, so that when you encounter
 them in legacy code, you'll still be able to work with them. However, for the
