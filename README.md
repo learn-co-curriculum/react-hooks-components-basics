@@ -173,10 +173,10 @@ introduction of [**hooks**][hooks] in React 16.8, this is no longer true, and
 function components can be used for (almost) everything that class components
 can.
 
-React's recommendation is that components be written as function components
-moving forward; but class components will continue to be supported as well.
-React is also planning to [rewrite their documentation][react docs rewrite] to
-focus on function components and hooks in the near future.
+React's recommendation is that components should be written as function
+components moving forward, but class components will continue to be supported
+as well. React is also planning to [rewrite their documentation][react docs
+rewrite] to focus on function components and hooks in the near future.
 
 In the meantime, you can also view a community-made version of the React docs
 that shows all examples with _function_ components [here][react docs hooks].
