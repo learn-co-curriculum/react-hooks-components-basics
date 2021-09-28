@@ -136,6 +136,80 @@ As you may expect, we refer to the `App` component as both the `Comment` and
 `Article` component's _parent_ component. Inversely, we refer to `Comment` and
 `Article` as _children_ components of `App`.
 
+## Naming Components
+
+You'll notice that both of the custom components we created, `Article` and
+`Comment`, are declared as functions whose names start with a **capital
+letter**:
+
+```jsx
+function Article() {
+  return (
+    <div>Dear Reader: Bjarne Stroustrup has the perfect lecture oration.</div>
+  );
+}
+function Comment() {
+  return <div>Naturally, I agree with this article.</div>;
+}
+```
+
+This naming convention is important for a couple very good reasons:
+
+- It helps React developers to easily differentiate between regular JavaScript
+  functions and React components
+- More importantly, it's a [rule that we must follow][component capitalization]
+  in order for React to render our components correctly.
+
+[component capitalization]: https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized
+
+For instance, if we defined our `Article` component using a lower-case letter,
+like this:
+
+```jsx
+function article() {
+  return (
+    <div>Dear Reader: Bjarne Stroustrup has the perfect lecture oration.</div>
+  );
+}
+```
+
+When it came time to use that component within another component, React would
+treat it as a regular `<article>` HTML element rather than one of our custom
+components:
+
+```jsx
+function App() {
+  return (
+    <div>
+      <article />
+    </div>
+  );
+}
+
+// returns these DOM elements:
+// <div>
+//  <article />
+// </div>
+```
+
+By giving naming it with a capital letter instead, we get the desired DOM
+elements returned:
+
+```jsx
+function App() {
+  return (
+    <div>
+      <Article />
+    </div>
+  );
+}
+
+// returns these DOM elements:
+// <div>
+//  <div>Dear Reader: Bjarne Stroustrup has the perfect lecture oration.</div>
+// </div>
+```
+
 ## A Note on Classes
 
 As you're exploring the React documentation, and finding other resources on
