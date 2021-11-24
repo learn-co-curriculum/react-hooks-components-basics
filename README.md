@@ -9,8 +9,8 @@
 
 In this lesson, we'll introduce the heart of React: components. This will
 include explaining why they're important and examining a few examples. If the
-idea and application of components doesn't click immediately, _do not worry!_ The
-different moving parts required to understand how to use them will fall into
+idea and application of components doesn't click immediately, _do not worry!_
+The different moving parts required to understand how to use them will fall into
 place as we move forward.
 
 Let's examine a high level overview of what a React component is before we
@@ -25,13 +25,13 @@ order to understand how powerful this is, consider just how intricate web
 applications can become. The difficulty in logically arranging, architecting,
 and programming these web applications increases with their size. Components are
 like little packages: they help us keep everything organized and predictable
-while abstracting the ['boilerplate'][boilerplate] code. Each component
-contains a snippet of code that describes what it should render to the DOM.
+while abstracting the ['boilerplate'][boilerplate] code. Each component contains
+a snippet of code that describes what it should render to the DOM.
 
 ## React Application Idea
 
-Enough of a description — let's see some examples! While the possibilities
-of what we can do with components are endless, the first thing we need to
+Enough of a description — let's see some examples! While the possibilities of
+what we can do with components are endless, the first thing we need to
 understand about them is the ways in which they act as code templates. Let's
 start simply and build up from there using the following as an example:
 
@@ -114,8 +114,8 @@ function App() {
 
 Here we can see JSX coming into play a bit more. The code inside the `return()`
 still looks a lot like regular HTML, but in addition to rendering a regular old
-HTML `<div>` element, we're also rendering our two components. We've created code
-that is not only well structured and modular, but also a straightforward
+HTML `<div>` element, we're also rendering our two components. We've created
+code that is not only well structured and modular, but also a straightforward
 description of what we want the `App` component to do: render the article first,
 followed by the comment. Here is what the resulting HTML will look like:
 
@@ -160,7 +160,8 @@ This naming convention is important for a couple very good reasons:
 - More importantly, it's a [rule that we must follow][component capitalization]
   in order for React to render our components correctly.
 
-[component capitalization]: https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized
+[component capitalization]:
+  https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized
 
 For instance, if we defined our `Article` component using a lower-case letter,
 like this:
@@ -248,12 +249,9 @@ function components can be used for (almost) everything that class components
 can.
 
 React's recommendation is that components should be written as function
-components moving forward, but class components will continue to be supported
-as well. React is also planning to [rewrite their documentation][react docs rewrite]
-to focus on function components and hooks in the near future.
-
-In the meantime, you can also view a [community-made version][react docs hooks]
-of the React docs that shows all examples with _function_ components.
+components moving forward, but class components will continue to be supported as
+well. React also recently released a [beta version of their new docs][beta docs]
+that focuses on function components and hooks.
 
 You'll learn more about class components later on, so that when you encounter
 them in legacy code, you'll still be able to work with them. However, for the
@@ -277,7 +275,7 @@ dynamically.
 
 - [React Top-Level API](https://reactjs.org/docs/react-api.html)
 - [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
-- [React Docs with Hooks][react docs hooks]
+- [React Docs (beta)][beta docs]
 
 [react component]: https://reactjs.org/docs/components-and-props.html
 [boilerplate]: https://en.wikipedia.org/wiki/Boilerplate_code
@@ -285,3 +283,4 @@ dynamically.
 [react docs rewrite]: https://github.com/reactjs/reactjs.org/issues/3308
 [react docs hooks]: https://reactwithhooks.netlify.app/
 [hooks]: https://reactjs.org/docs/hooks-intro.html
+[beta docs]: https://beta.reactjs.org
