@@ -3,7 +3,7 @@
 ## Learning Goals
 
 - Understand what a React component is and what it can be used for
-- Write React components and show the DOM elements they create
+- Write React components and identify the DOM elements they create
 
 ## Introduction
 
@@ -25,14 +25,17 @@ order to understand how powerful this is, consider just how intricate web
 applications can become. The difficulty in logically arranging, architecting,
 and programming these web applications increases with their size. Components are
 like little packages: they help us keep everything organized and predictable
-while abstracting the ['boilerplate'][boilerplate] code. Each component contains
-a snippet of code that describes what it should render to the DOM.
+while abstracting the ['boilerplate'][boilerplate] code.
+
+Components can do many things, but their end goal is always the same: they all
+must contain a snippet of code that describes what they should render to the
+DOM.
 
 ## React Application Idea
 
 Enough of a description — let's see some examples! While the possibilities of
 what we can do with components are endless, the first thing we need to
-understand about them is the ways in which they act as code templates. Let's
+understand about them is the ways in which they act as **code templates**. Let's
 start simply and build up from there using the following as an example:
 
 Let's imagine we want a blog article describing the fact (note: not opinion) of
@@ -43,7 +46,7 @@ Fork and clone the repo for this lesson if you'd like to follow along.
 
 ### Step 1: Write the Components
 
-First, let's make a component to showcase an opinion:
+First, let's make a component for our article:
 
 ```jsx
 function Article() {
@@ -56,22 +59,23 @@ function Article() {
 Take a moment to read that code line by line:
 
 - we declare a function, `Article`
-- we explicitly provide a return value of **JSX** (we tell React "Hey, when you
-  want to put this component on the DOM, here is what it should become!")
+- the function has a return value of **JSX**, which is our way of telling React
+  "Hey, when you want to put this component on the DOM, here is what it should
+  become!"
 
-When React creates this element and adds it to the DOM, the resulting HTML will
-look just as you would expect:
+When React creates this element and adds it to the DOM, the resulting element
+will look just as you would expect:
 
 ```html
 <div>Dear Reader: Bjarne Stroustrup has the perfect lecture oration.</div>
 ```
 
-Let's see what it would look like, were we to only render this one component, in
-the DOM:
+Let's see what it would look like if we were to only render this one component
+in the DOM:
 
 ![component article example](https://curriculum-content.s3.amazonaws.com/react/component-article-example.png)
 
-Ok, that takes care of our `Article` part of our application. Now let's make a
+That takes care of our `Article` part of our application. Now let's make a
 component to display a single user's comment:
 
 ```jsx
@@ -80,7 +84,7 @@ function Comment() {
 }
 ```
 
-Take the time to read that component line by line. Here is the HTML that this
+Take the time to read that component line by line. Here is the element that this
 would create when added to the DOM:
 
 ```html
@@ -96,7 +100,7 @@ Once we have our components in hand, it's time to actually use them.
 ### Step 2: Use the Components
 
 Now that we have these components written, all we need to do is make sure some
-other component is making use of them in its **return statement**. Every React
+_other_ component is making use of them in its **return statement**. Every React
 application has some top level component(s). Very often, this top level
 component is simply called `App`. For our example, here's what it might look
 like:
@@ -117,7 +121,7 @@ still looks a lot like regular HTML, but in addition to rendering a regular old
 HTML `<div>` element, we're also rendering our two components. We've created
 code that is not only well structured and modular, but also a straightforward
 description of what we want the `App` component to do: render the article first,
-followed by the comment. Here is what the resulting HTML will look like:
+followed by the comment. Here is what the resulting elements will look like:
 
 ```html
 <div>
@@ -253,9 +257,9 @@ components moving forward, but class components will continue to be supported as
 well. React also recently released a [beta version of their new docs][beta docs]
 that focuses on function components and hooks.
 
-You'll learn more about class components later on, so that when you encounter
-them in legacy code, you'll still be able to work with them. However, for the
-time being, we'll just be focusing on function components.
+It's important to learn more about class components later on, so that when you
+encounter them in legacy code, you'll still be able to work with them. However,
+for the time being, we'll just be focusing on function components.
 
 ## Conclusion
 
@@ -264,8 +268,8 @@ house modularized front end code. In our example — as is often the case — th
 contain information on how a portion of our application should be turned into
 HTML.
 
-The minimum requirement for a React component is that it must be a function that
-starts with a capital letter and returns JSX.
+**The minimum requirement for a React component is that it must be a function
+that starts with a capital letter and returns JSX.**
 
 Going forward, we will continue with this example and show how components can be
 re-used and how they can be written as templates in which content is populated
