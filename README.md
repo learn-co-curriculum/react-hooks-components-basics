@@ -197,7 +197,7 @@ function App() {
 // </div>
 ```
 
-By giving naming it with a capital letter instead, we get the desired DOM
+By naming it with a capital letter instead, we get the desired DOM
 elements returned:
 
 ```jsx
