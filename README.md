@@ -44,6 +44,9 @@ also want our blog article to display comments made by readers.
 
 Fork and clone the repo for this lesson if you'd like to follow along.
 
+After forking the repo, run the `npm install` command to install all the
+dependencies and the `npm start` command to run the app.
+
 ### Step 1: Write the Components
 
 First, let's make a component for our article:
