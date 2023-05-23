@@ -17,8 +17,8 @@ Let's examine a high level overview of what a React component is before we
 implement one. The official [React documentation on components][react component]
 says it best:
 
-> Components let you split the UI into independent, reusable pieces, and think
-> about each piece in isolation.
+> React lets you combine your markup, CSS, and JavaScript into custom “components”,
+> reusable UI elements for your app.
 
 Components modularize both _functionality_ and _presentation_ in our code. In
 order to understand how powerful this is, consider just how intricate web
@@ -169,7 +169,7 @@ This naming convention is important for a couple very good reasons:
   in order for React to render our components correctly.
 
 [component capitalization]:
-  https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized
+  https://react.dev/learn/your-first-component#step-2-define-the-function
 
 For instance, if we defined our `Article` component using a lower-case letter,
 like this:
@@ -258,8 +258,7 @@ can.
 
 React's recommendation is that components should be written as function
 components moving forward, but class components will continue to be supported as
-well. React also recently released a [beta version of their new docs][beta docs]
-that focuses on function components and hooks.
+well. 
 
 It's important to learn more about class components later on, so that when you
 encounter them in legacy code, you'll still be able to work with them. However,
@@ -281,14 +280,11 @@ dynamically.
 
 ## Resources
 
-- [React Top-Level API](https://reactjs.org/docs/react-api.html)
-- [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
-- [React Docs (beta)][beta docs]
+- [React API Documentation](https://react.dev/reference/react/apis)
+- [Introducing JSX](https://react.dev/learn/writing-markup-with-jsx)
 
-[react component]: https://reactjs.org/docs/components-and-props.html
+[react component]: https://react.dev/learn/your-first-component#components-ui-building-blocks
 [boilerplate]: https://en.wikipedia.org/wiki/Boilerplate_code
 [bjarne-stroustrup]: https://www.youtube.com/watch?v=JBjjnqG0BP8
-[react docs rewrite]: https://github.com/reactjs/reactjs.org/issues/3308
 [react docs hooks]: https://reactwithhooks.netlify.app/
-[hooks]: https://reactjs.org/docs/hooks-intro.html
-[beta docs]: https://beta.reactjs.org
+[hooks]: https://react.dev/learn/state-a-components-memory#meet-your-first-hook
